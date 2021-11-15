@@ -20,17 +20,16 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="java的三层架构表现层就是界面。最上层，跟用户最近。交互界面。 业务层&#x2F;逻辑层 核心价值 系统设计 业务需求的实现 业务规定合流程 持久层&#x2F;DAO数据访问层 访问数据库 采用DAO模式 建立实体类和数据库表的映射（ORM映射）DAO(Data Access Object) 数据访问对象是一个面向对象的数据库接口。 实现了模块化编程 按层更新 更加简便">
+  <meta name="description" content="表现层就是界面。最上层，跟用户最近。交互界面。 业务层&#x2F;逻辑层 核心价值 系统设计 业务需求的实现 业务规定合流程 持久层&#x2F;DAO数据访问层 访问数据库 采用DAO模式 建立实体类和数据库表的映射（ORM映射）DAO(Data Access Object) 数据访问对象是一个面向对象的数据库接口。 实现了模块化编程 按层更新 更加简便">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java的三层架构">
 <meta property="og:url" content="http://example.com/2021/11/16/Java%E7%9A%84%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="LrchNhsL">
-<meta property="og:description" content="java的三层架构表现层就是界面。最上层，跟用户最近。交互界面。 业务层&#x2F;逻辑层 核心价值 系统设计 业务需求的实现 业务规定合流程 持久层&#x2F;DAO数据访问层 访问数据库 采用DAO模式 建立实体类和数据库表的映射（ORM映射）DAO(Data Access Object) 数据访问对象是一个面向对象的数据库接口。 实现了模块化编程 按层更新 更加简便">
+<meta property="og:description" content="表现层就是界面。最上层，跟用户最近。交互界面。 业务层&#x2F;逻辑层 核心价值 系统设计 业务需求的实现 业务规定合流程 持久层&#x2F;DAO数据访问层 访问数据库 采用DAO模式 建立实体类和数据库表的映射（ORM映射）DAO(Data Access Object) 数据访问对象是一个面向对象的数据库接口。 实现了模块化编程 按层更新 更加简便">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-15T17:05:41.000Z">
-<meta property="article:modified_time" content="2021-11-15T17:06:30.245Z">
+<meta property="article:modified_time" content="2021-11-15T17:07:45.226Z">
 <meta property="article:author" content="小蛇软软">
-<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/11/16/Java%E7%9A%84%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/">
@@ -176,7 +175,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-11-16 01:05:41 / 修改时间：01:06:30" itemprop="dateCreated datePublished" datetime="2021-11-16T01:05:41+08:00">2021-11-16</time>
+              <time title="创建时间：2021-11-16 01:05:41 / 修改时间：01:07:45" itemprop="dateCreated datePublished" datetime="2021-11-16T01:05:41+08:00">2021-11-16</time>
             </span>
 
           
@@ -190,7 +189,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="java的三层架构"><a href="#java的三层架构" class="headerlink" title="java的三层架构"></a>java的三层架构</h1><h2 id="表现层"><a href="#表现层" class="headerlink" title="表现层"></a>表现层</h2><p>就是界面。最上层，跟用户最近。交互界面。</p>
+        <h2 id="表现层"><a href="#表现层" class="headerlink" title="表现层"></a>表现层</h2><p>就是界面。最上层，跟用户最近。交互界面。</p>
 <h2 id="业务层-逻辑层"><a href="#业务层-逻辑层" class="headerlink" title="业务层/逻辑层"></a>业务层/逻辑层</h2><p> 核心价值 系统设计 业务需求的实现 业务规定合流程</p>
 <h2 id="持久层-DAO"><a href="#持久层-DAO" class="headerlink" title="持久层/DAO"></a>持久层/DAO</h2><p>数据访问层 访问数据库 采用DAO模式 建立实体类和数据库表的映射（ORM映射）<br>DAO(Data Access Object) 数据访问对象是一个面向对象的数据库接口。</p>
 <p>实现了模块化编程 按层更新 更加简便 </p>
@@ -202,9 +201,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/java/" rel="tag"># java</a>
-          </div>
 
         
 
@@ -274,7 +270,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E7%9A%84%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">java的三层架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E7%8E%B0%E5%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">表现层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E5%B1%82-%E9%80%BB%E8%BE%91%E5%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">业务层&#x2F;逻辑层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E5%B1%82-DAO"><span class="nav-number">1.3.</span> <span class="nav-text">持久层&#x2F;DAO</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E7%8E%B0%E5%B1%82"><span class="nav-number">1.</span> <span class="nav-text">表现层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E5%B1%82-%E9%80%BB%E8%BE%91%E5%B1%82"><span class="nav-number">2.</span> <span class="nav-text">业务层&#x2F;逻辑层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E5%B1%82-DAO"><span class="nav-number">3.</span> <span class="nav-text">持久层&#x2F;DAO</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -291,10 +287,6 @@
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>

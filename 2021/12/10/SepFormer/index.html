@@ -20,15 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LrchNhsL">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="Encoder一维卷积+激活函数ReLU 一维卷积 一般来说，一维卷积nn.Conv1d用于文本数据，只对宽度进行卷积，对高度不卷积。通常，输入大小为word_embedding_dim * max_length，其中，word_embedding_dim为词向量的维度，max_length为句子的最大长度。卷积核窗口在句子长度的方向上滑动，进行卷积操作。  不改变特征图尺寸的前提下去改变通道数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SepFormer">
+<meta property="og:url" content="http://example.com/2021/12/10/SepFormer/index.html">
 <meta property="og:site_name" content="LrchNhsL">
+<meta property="og:description" content="Encoder一维卷积+激活函数ReLU 一维卷积 一般来说，一维卷积nn.Conv1d用于文本数据，只对宽度进行卷积，对高度不卷积。通常，输入大小为word_embedding_dim * max_length，其中，word_embedding_dim为词向量的维度，max_length为句子的最大长度。卷积核窗口在句子长度的方向上滑动，进行卷积操作。  不改变特征图尺寸的前提下去改变通道数">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/贾婉懿/AppData/Roaming/Typora/typora-user-images/image-20211210005725756.png">
+<meta property="og:image" content="https://img-blog.csdn.net/20180122213410824?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjA5MDkzNzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="article:published_time" content="2021-12-09T16:39:30.000Z">
+<meta property="article:modified_time" content="2021-12-09T17:07:25.880Z">
 <meta property="article:author" content="小蛇软软">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/贾婉懿/AppData/Roaming/Typora/typora-user-images/image-20211210005725756.png">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/2021/12/10/SepFormer/">
 
 
 <script id="page-configurations">
@@ -36,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | LrchNhsL</title>
+  <title>SepFormer | LrchNhsL</title>
   
 
 
@@ -140,150 +147,101 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/10/SepFormer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小蛇软软">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LrchNhsL">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SepFormer
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-10 00:39:30 / 修改时间：01:07:25" itemprop="dateCreated datePublished" datetime="2021-12-10T00:39:30+08:00">2021-12-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+        <h2 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h2><p>一维卷积+激活函数ReLU</p>
+<h6 id="一维卷积"><a href="#一维卷积" class="headerlink" title="一维卷积"></a>一维卷积</h6><blockquote>
+<p>一般来说，一维卷积<code>nn.Conv1d</code>用于文本数据，只对宽度进行卷积，对高度不卷积。通常，输入大小为<code>word_embedding_dim * max_length</code>，其中，<code>word_embedding_dim</code>为词向量的维度，<code>max_length</code>为句子的最大长度。卷积核窗口在句子长度的方向上滑动，进行卷积操作。</p>
+<ol>
+<li>不改变特征图尺寸的前提下去改变通道数</li>
+<li>增强了网络局部模块的抽象表达能力(即构造更复杂的卷积核进行卷积)</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">self.Conv1d = nn.Conv1d(in_channels=<span class="number">1</span>,<span class="comment">#输入信号的通道，词向量的维度</span></span><br><span class="line">                                out_channels=N,<span class="comment">#卷积产生的通道数，有多少个它就有多少个一维卷积。卷积核的数量。</span></span><br><span class="line">                                kernel_size=L,<span class="comment">#卷积核尺寸。卷积核的第二个维度由in_channels决定，所以实际上卷积核的大小为kernel_size * in_channels</span></span><br><span class="line">                                stride=L//<span class="number">2</span>,<span class="comment">#卷积步长</span></span><br><span class="line">                                padding=<span class="number">0</span>,<span class="comment">#输入的每一条边补充0的层数</span></span><br><span class="line">                                bias=<span class="literal">False</span>)<span class="comment">#不添加偏置</span></span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<img src="C:\Users\贾婉懿\AppData\Roaming\Typora\typora-user-images\image-20211210005725756.png" alt="image-20211210005725756" style="zoom:50%;" />
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-12-10T11:18:45+08:00"
-              content="2021-12-10">
-          12-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/12/10/leetcode1/" itemprop="url">
-            <span itemprop="name">leetcode1</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-12-10T08:41:30+08:00"
-              content="2021-12-10">
-          12-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/12/10/tensorboard/" itemprop="url">
-            <span itemprop="name">tensorboard</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-12-10T00:39:30+08:00"
-              content="2021-12-10">
-          12-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/12/10/SepFormer/" itemprop="url">
-            <span itemprop="name">SepFormer</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-17T09:53:13+08:00"
-              content="2021-11-17">
-          11-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/17/django/" itemprop="url">
-            <span itemprop="name">django</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-16T01:05:41+08:00"
-              content="2021-11-16">
-          11-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/16/Java%E7%9A%84%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/" itemprop="url">
-            <span itemprop="name">Java的三层架构</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-14T19:07:09+08:00"
-              content="2021-11-14">
-          11-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/14/machineLearning1/" itemprop="url">
-            <span itemprop="name">未命名</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<p>最后输出大小：B×out_channels×(L-1)</p>
+<h6 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h6><ul>
+<li><p>克服梯度消失的问题</p>
+</li>
+<li><p>加快训练速度</p>
+</li>
+<li><p>因为克服了梯度消失问题，所以训练才会快。</p>
+<p><img src="https://img-blog.csdn.net/20180122213410824?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjA5MDkzNzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="ReLU"></p>
+</li>
+</ul>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/17/django/" rel="prev" title="django">
+      <i class="fa fa-chevron-left"></i> django
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/10/tensorboard/" rel="next" title="tensorboard">
+      tensorboard <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -336,6 +294,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoder"><span class="nav-number">1.</span> <span class="nav-text">Encoder</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%8D%B7%E7%A7%AF"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">一维卷积</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ReLU"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">ReLU</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

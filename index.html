@@ -156,6 +156,78 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/11/checkpoint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小蛇软软">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LrchNhsL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/11/checkpoint/" class="post-title-link" itemprop="url">checkpoint</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-11 14:51:48 / 修改时间：15:09:45" itemprop="dateCreated datePublished" datetime="2021-12-11T14:51:48+08:00">2021-12-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="checkpoint-模型的保存和恢复"><a href="#checkpoint-模型的保存和恢复" class="headerlink" title="checkpoint 模型的保存和恢复"></a>checkpoint 模型的保存和恢复</h1><p>pytorch 文件后缀不重要，都一样。</p>
+<h2 id="保存加载checkpoint文件"><a href="#保存加载checkpoint文件" class="headerlink" title="保存加载checkpoint文件"></a>保存加载checkpoint文件</h2><h3 id="保存加载整个state-dict"><a href="#保存加载整个state-dict" class="headerlink" title="保存加载整个state_dict"></a>保存加载整个state_dict</h3><p>只保存模型权重参数，不保存模型结构</p>
+<p>保存 <code>torch.save(model.state_dict(),path)</code></p>
+<p>加载 <code>model.load_state_dict(torch.load(path))</code></p>
+<p><code>model.eval()</code></p>
+<h3 id="保存加载整个模型"><a href="#保存加载整个模型" class="headerlink" title="保存加载整个模型"></a>保存加载整个模型</h3><p>保存整个model的状态</p>
+<p>保存 <code>torch.save(model, PATH)</code></p>
+<p>加载 <code>model = torch.load(PATH)</code></p>
+<p><code>model.eval()</code></p>
+<h3 id="保存用于继续训练的checkpoint或者多个模型"><a href="#保存用于继续训练的checkpoint或者多个模型" class="headerlink" title="保存用于继续训练的checkpoint或者多个模型"></a>保存用于继续训练的checkpoint或者多个模型</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存</span></span><br><span class="line">torch.save(&#123;</span><br><span class="line">            <span class="string">&#x27;epoch&#x27;</span>: epoch,</span><br><span class="line">            <span class="string">&#x27;model_state_dict&#x27;</span>: model.state_dict(),</span><br><span class="line">            ...</span><br><span class="line">            &#125;, PATH)</span><br><span class="line"><span class="comment"># 加载</span></span><br><span class="line">checkpoint = torch.load(PATH)</span><br><span class="line">start_epoch=checkpoint[<span class="string">&#x27;epoch&#x27;</span>]</span><br><span class="line">model.load_state_dict(checkpoint[<span class="string">&#x27;model_state_dict&#x27;</span>])</span><br><span class="line"><span class="comment"># 测试时</span></span><br><span class="line">model.<span class="built_in">eval</span>()</span><br><span class="line"><span class="comment"># 或者训练时</span></span><br><span class="line">model.train()</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨gpu和cpu"><a href="#跨gpu和cpu" class="headerlink" title="跨gpu和cpu"></a>跨gpu和cpu</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/joyce_peng/article/details/104133594">https://blog.csdn.net/joyce_peng/article/details/104133594</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/10/leetcode1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -680,7 +752,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

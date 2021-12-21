@@ -156,6 +156,139 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/15/Spring%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小蛇软软">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LrchNhsL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/15/Spring%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">Spring注解</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-15 10:12:18 / 修改时间：10:21:34" itemprop="dateCreated datePublished" datetime="2021-12-15T10:12:18+08:00">2021-12-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h1><p>给程序进行自动配置</p>
+<h1 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h1><p>直接写入Http response body里</p>
+<h1 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h1><p>存储层Bean 标记dao组件（访问数据库）</p>
+<h1 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h1><p>业务层Bean</p>
+<h1 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h1><p>定义控制类 控制器负责把用户发来的url请求发到对应的服务层接口。</p>
+<h1 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h1><p>标注控制层组件 @ResponseBody和@Controller的合集</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/12/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小蛇软软">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LrchNhsL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/12/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-title-link" itemprop="url">动态规划</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-12 17:22:43 / 修改时间：19:04:13" itemprop="dateCreated datePublished" datetime="2021-12-12T17:22:43+08:00">2021-12-12</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>状态转移方程</strong></p>
+<h1 id="最长回文子串"><a href="#最长回文子串" class="headerlink" title="最长回文子串"></a>最长回文子串</h1><p>设 p(i,j)是回文子串</p>
+<p><img src="https://latex.codecogs.com/gif.latex?p(i,j)=%5Cleft%5C%7B%5Cbegin%7Bmatrix%7Dtrue%20%5C%5C%20false%20%5Cend%7Bmatrix%7D%5Cright."></p>
+<p>那么状态转移方程</p>
+<p><img src="https://latex.codecogs.com/gif.latex?p(i,j)=p(i&plus;1,j-1)%5Cwedge&space;(S_%7Bi%7D=S_%7Bj%7D)"></p>
+<p>上面的前提 j-i&gt;2</p>
+<p>还要考虑边界：</p>
+<p>串长度=1，肯定是回文串。j=i时 true</p>
+<p>串长度=2，当i+1=j∧Si=Sj的时候,true</p>
+<p>答案就是j-i+1最大且p（i，j）=true的。</p>
+<p>用reverse函数会超时（。）再研究一下递推。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/11/checkpoint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -251,10 +384,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-12-10 11:18:45 / 修改时间：11:24:31" itemprop="dateCreated datePublished" datetime="2021-12-10T11:18:45+08:00">2021-12-10</time>
+              <time title="创建时间：2021-12-10 11:18:45" itemprop="dateCreated datePublished" datetime="2021-12-10T11:18:45+08:00">2021-12-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-21 15:21:17" itemprop="dateModified" datetime="2021-12-21T15:21:17+08:00">2021-12-21</time>
+              </span>
 
           
 
@@ -272,6 +411,8 @@
 <p>数组长度：<code>a.length()</code></p>
 <p>把字符串全部小写：<code>a.toLowerCase()</code></p>
 <p>大写<code>a.toUpperCase()</code></p>
+<h6 id="1154-一年中的第几天"><a href="#1154-一年中的第几天" class="headerlink" title="1154  一年中的第几天"></a>1154  一年中的第几天</h6><p>String变成int类型：<code>Integer.parseInt(str)</code></p>
+<p>分割字符串<code>str.split(&#39;&#39;)</code></p>
 
       
     </div>
@@ -752,14 +893,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
